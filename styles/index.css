@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
+/*VAR*/
+:root {
+	--dark-gray: #797979;
+    --light-gray: #ededed;
+    --primary-color: #1864ab;
+    --black: #333;
+}
+/*END VAR*/
+
+/*GENERAL*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--black);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*FIN GENERAL*/
+
+/*HEADER*/
+header {
+    padding: 1rem;
+    box-shadow: 0px 6px 9px -4px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 6px 9px -4px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 6px 9px -4px rgba(0, 0, 0, 0.3);
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+header nav img {
+    margin-right: 1rem;
+    border-radius: 100%;
+}
+
+.header-title h1 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.header-title h2{
+    font-size: .6rem;
+    text-transform: uppercase;
+}
+
+/*END HEADER*/
+
+/*HERO NEWS*/
+.hero-container {
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-news {
+    width: 100%;
+    box-shadow: 0px 14px 24px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 14px 24px 2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 14px 24px 2px rgba(0, 0, 0, 0.3);
+}
+
+.hero-news-img {
+    background-image: url("https://placehold.co/500x300");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 15rem;
+    width: 100%;
+}
+
+.hero-news-body {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 20rem;
+}
+
+.hero-news-body h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: var(--primary-color);
+}
+.hero-news-body p {
+    font-weight: lighter;
+}
+.hero-news-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    font-size: .8rem;
+    font-weight: lighter;
+}
+.hero-news-info a{
+    color: var(--primary-color);
+}
+.hero-indice{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.hero-indice svg{
+    height: .8rem;
+    width: .8rem;
+    margin: 2rem .5rem;
+    fill: var(--dark-gray);
+    cursor: pointer;
+}
+#hero-indice-active{
+    fill: var(--primary-color);
+}
+/*END HERO NEWS*/
+
+/*DIRIGENTES SECTION*/
+.dirigentes-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.dirigentes-container-title{
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-top: solid;
+    border-bottom: solid;
+    border-color: var(--light-gray);
+}
+.dirigentes-container-dobles{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dirigente{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+.dirigente-img{
+    background-image: url("https://placehold.co/100x100");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 100%;
+}
+.dirigente h4{
+    font-size: .9rem;
+    margin-top: .5rem;
+    color: var(--primary-color);
+}
+.dirigente p{
+    font-size: .8rem;
+    font-weight: lighter;
+}
+
+/*END DIRIGENTES SECTION*/
