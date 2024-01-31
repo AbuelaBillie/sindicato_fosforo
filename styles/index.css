@@ -2,11 +2,14 @@
 
 /*VAR*/
 :root {
-	--dark-gray: #797979;
+    --dark-gray: #797979;
     --light-gray: #ededed;
-    --primary-color: #1864ab;
+    --primary-color: #35589a;
+    --primary-color-dark: #31518d;
     --black: #333;
+    --white: #fff;
 }
+
 /*END VAR*/
 
 /*GENERAL*/
@@ -34,17 +37,25 @@ header {
     box-shadow: 0px 6px 9px -4px rgba(0, 0, 0, 0.3);
     -webkit-box-shadow: 0px 6px 9px -4px rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 0px 6px 9px -4px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--white);
 }
 
-header nav {
+header a {
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
 
-header nav img {
+header a img {
     margin-right: 1rem;
     border-radius: 100%;
+    height: 5rem;
+    width: 5rem;
+    object-fit: cover;
 }
 
 .header-title h1 {
@@ -52,7 +63,7 @@ header nav img {
     color: var(--primary-color);
 }
 
-.header-title h2{
+.header-title h2 {
     font-size: .6rem;
     text-transform: uppercase;
 }
@@ -60,29 +71,37 @@ header nav img {
 /*END HEADER*/
 
 /*HERO NEWS*/
-.hero-container {
+.hero {
+    position: relative;
+    overflow: hidden;
     width: 100%;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    margin-top: 8rem;
 }
 
-.hero-news {
-    width: 100%;
+#noticias {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    align-items: center;
+    padding: 2rem;
+}
+
+.noticia {
     box-shadow: 0px 14px 24px 2px rgba(0, 0, 0, 0.3);
     -webkit-box-shadow: 0px 14px 24px 2px rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 0px 14px 24px 2px rgba(0, 0, 0, 0.3);
+    flex: 0 0 100%;
+    margin: auto 2rem;
+    border-radius: .3rem;
+}
+.noticia:first-child{
+    margin-left: 0rem;
 }
 
-.hero-news-img {
-    background-image: url("https://placehold.co/500x300");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.noticia img {
     height: 15rem;
     width: 100%;
+    object-fit: cover;
+    border-radius: .3rem .3rem 0 0;
 }
 
 .hero-news-body {
@@ -90,7 +109,7 @@ header nav img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     height: 20rem;
 }
 
@@ -100,10 +119,12 @@ header nav img {
     text-transform: uppercase;
     color: var(--primary-color);
 }
+
 .hero-news-body p {
     font-weight: lighter;
 }
-.hero-news-info{
+
+.hero-news-info {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -111,38 +132,81 @@ header nav img {
     font-size: .8rem;
     font-weight: lighter;
 }
-.hero-news-info a{
+
+.hero-news-info a {
     color: var(--primary-color);
 }
-.hero-indice{
+
+#indicadores {
     display: flex;
-    align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 100%;
+    margin: 2rem auto;
 }
-.hero-indice svg{
-    height: .8rem;
-    width: .8rem;
-    margin: 2rem .5rem;
-    fill: var(--dark-gray);
+
+.indicador {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #888;
+    margin: 0 5px;
     cursor: pointer;
 }
-#hero-indice-active{
-    fill: var(--primary-color);
+
+.activo {
+    background-color: #333;
 }
+
 /*END HERO NEWS*/
 
-/*DIRIGENTES SECTION*/
-.dirigentes-container{
+/*OBRA SOCIAL*/
+.banner{
+    padding:1rem;
+    margin: 3rem auto;
+    height: 25rem;
+    width: 100%;
+}
+.obra-social{
+    height: 100%;
+    width: 100%;
+    /* background-image: url("https://placehold.co/1600x1600");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+    background-color: #35589a;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding: 3rem;
 }
-.dirigentes-container-title{
+.obra-social img{
+    height: 10rem;
+    width: 10rem;
+    border-radius: 100%;
+}
+.obra-social h3{
+    color: var(--white);
+    margin-top: 2rem;
+    text-align: center;
+    font-weight: normal;
+}
+.obra-social h4{
+    color: var(--white);
+    margin-top: 1rem;
+    text-align: center;
+}
+/*END OBRA SOCIAL*/
+
+/*DIRIGENTES SECTION*/
+.dirigentes-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.dirigentes-container-title {
     width: 100%;
     text-align: center;
     padding: 1rem;
@@ -150,20 +214,24 @@ header nav img {
     border-top: solid;
     border-bottom: solid;
     border-color: var(--light-gray);
+    border-width: 2px;
 }
-.dirigentes-container-dobles{
+
+.dirigentes-container-dobles {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.dirigente{
+
+.dirigente {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 2rem 1rem;
 }
-.dirigente-img{
+
+.dirigente-img {
     background-image: url("https://placehold.co/100x100");
     background-position: center;
     background-repeat: no-repeat;
@@ -172,14 +240,153 @@ header nav img {
     width: 5rem;
     border-radius: 100%;
 }
-.dirigente h4{
+
+.dirigente h4 {
     font-size: .9rem;
     margin-top: .5rem;
     color: var(--primary-color);
 }
-.dirigente p{
+
+.dirigente p {
     font-size: .8rem;
     font-weight: lighter;
 }
-
+.secretario-general{
+    background-image: url("https://www.shutterstock.com/shutterstock/photos/1926074168/display_1500/stock-photo-profile-picture-of-young-caucasian-confident-woman-employee-or-worker-pose-at-workplace-in-office-1926074168.jpg");
+}
 /*END DIRIGENTES SECTION*/
+
+/*ULTIMAS NOTICIAS*/
+.ultimas-noticias-container{
+    padding: 1rem;
+    margin-bottom: 8rem;
+}
+.ultimas-noticias-title{
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-top: solid;
+    border-bottom: solid;
+    border-color: var(--light-gray);
+    border-width: 2px;
+}
+.news{
+    box-shadow: 0px 14px 24px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 14px 24px 2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 14px 24px 2px rgba(0, 0, 0, 0.3);
+    margin-bottom: 2rem;
+}
+.news-img{
+    background-color: green;
+    height: 15rem;
+    width: 100%;
+    display: flex;
+    align-items: end;
+}
+.news-img p{
+    font-size: .7rem;
+    padding: .5rem .8rem;
+    font-weight: bold;
+    color: var(--white);
+    background-color:var(--primary-color)
+}
+.news h3{
+    padding: 2rem 1rem;
+}
+
+/*END ULTIMAS NOTICIAS*/
+
+/*FOOTER*/
+footer {
+    background-color: var(--primary-color);
+    padding: 1rem;
+}
+
+.footer-logo a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2rem 1rem;
+    border-bottom: solid;
+    border-width: 2px;
+    border-color: var(--primary-color-dark)
+}
+
+.footer-logo a img {
+    margin-right: 1rem;
+    border-radius: 100%;
+    height: 5rem;
+}
+
+.footer-logo-title h5 {
+    font-size: 1rem;
+    color: var(--white);
+}
+
+.footer-logo-title h6 {
+    font-size: .5rem;
+    text-transform: uppercase;
+    color: var(--white);
+}
+
+.footer-mapa {
+    width: 100%;
+    height: 20rem;
+    border-radius: .3rem;
+    margin: 2rem auto;
+}
+.footer-info {
+    margin-top: 2rem;
+}
+
+.footer-info-box p {
+    color: var(--white);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: .9rem;
+    margin: 1.3rem auto.3rem;
+}
+
+.footer-info-box span {
+    color: var(--white);
+    font-weight: normal;
+    font-size: .9rem;
+}
+
+.footer-info-redes p {
+    color: var(--white);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: .9rem;
+    margin: 1.3rem auto.3rem;
+}
+
+.footer-info-redes div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.footer-info-redes div svg {
+    background-color: var(--white);
+    padding: .5rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 100%;
+    cursor: pointer;
+    margin: .3rem .5rem 0 0;
+    fill: var(--primary-color)
+}
+.creditos{
+    border-top: solid;
+    border-width: 2px;
+    border-color: var(--primary-color-dark);
+    padding: 1rem;
+    text-align: center;
+    font-size: .8rem;
+}
+.creditos p, .creditos p a{
+    color: var(--white)
+}
+/*END FOOTER*/
