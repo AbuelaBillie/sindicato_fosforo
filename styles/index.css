@@ -257,9 +257,11 @@ header a img {
 /*END DIRIGENTES SECTION*/
 
 /*ULTIMAS NOTICIAS*/
+.ultimas-noticias{
+    padding: 1rem;
+}
 .ultimas-noticias-container{
     padding: 1rem;
-    margin-bottom: 8rem;
 }
 .ultimas-noticias-title{
     width: 100%;
@@ -278,7 +280,9 @@ header a img {
     margin-bottom: 2rem;
 }
 .news-img{
-    background-color: green;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     height: 15rem;
     width: 100%;
     display: flex;
@@ -294,7 +298,28 @@ header a img {
 .news h3{
     padding: 2rem 1rem;
 }
-
+.ultimas-noticias-botonera{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8rem;
+}
+.ultimas-noticias-botonera button{
+    height: 2rem;
+    width: 2rem;
+    margin: .2rem;
+    background: transparent;
+    border:solid;
+    border-width: 1px;
+    border-radius: .3rem;
+    border-color: var(--dark-gray);
+    color: var(--dark-gray);
+    cursor: pointer;
+}
+.ultimas-noticias-botonera button:hover{
+    background-color: var(--primary-color);
+    color: var(--light-gray);
+}
 /*END ULTIMAS NOTICIAS*/
 
 /*FOOTER*/
