@@ -4,8 +4,8 @@
 :root {
     --dark-gray: #797979;
     --light-gray: #ededed;
-    --primary-color: #35589a;
-    --primary-color-dark: #31518d;
+    --primary-color: #51181d;
+    --primary-color-dark: #391014;
     --black: #333;
     --white: #fff;
 }
@@ -57,7 +57,6 @@ header a img {
     width: 5rem;
     object-fit: cover;
 }
-
 .header-title h1 {
     font-size: 1.5rem;
     color: var(--primary-color);
@@ -66,6 +65,7 @@ header a img {
 .header-title h2 {
     font-size: .6rem;
     text-transform: uppercase;
+    color: var(--primary-color-dark);
 }
 
 /*END HEADER*/
@@ -168,11 +168,7 @@ header a img {
 .obra-social{
     height: 100%;
     width: 100%;
-    /* background-image: url("https://placehold.co/1600x1600");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; */
-    background-color: #35589a;
+    background-color: #6b8ba2;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -180,8 +176,7 @@ header a img {
     padding: 3rem;
 }
 .obra-social img{
-    height: 10rem;
-    width: 10rem;
+    height: 8rem;
     border-radius: 100%;
 }
 .obra-social h3{

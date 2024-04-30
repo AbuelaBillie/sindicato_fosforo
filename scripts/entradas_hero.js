@@ -1,34 +1,34 @@
 export let entradas = [
     {
-        "image": "https://media.istockphoto.com/id/1784301003/es/foto/vista-a%C3%A9rea-de-la-mujer-y-el-hombre-caminando-en-las-pintorescas-monta%C3%B1as-congeladas-cubiertas.webp?s=1024x1024&w=is&k=20&c=weBf_mOBIkp5aD8baGNJnrshrWe76AitLk_OiwFbOeM=",
-        "desc-img": "ci",
-        "title": "Nuevo paro el 31 de enero 2024",
-        "body": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores nulla quos, ducimus",
-        "fecha": "01/12/2020",
-        "url": "https://ospif.ar"
+        "image": "../resc/hero_news/universidades.webp",
+        "desc-img": "defensa de la universidad pública",
+        "title": "SOEIFEPVA a favor de la educación pública, gratuita y de calidad",
+        "body": "Expresamos todo nuestro apoyo a los y las estudiantes, docentes y no docentes de las universidades públicas de nuestro país frente a la movilización planificada para este 23 de abril.",
+        "fecha": "22/04/2024",
+        "url": "#"
     },
     {
-        "image": "https://media.istockphoto.com/id/1660911398/es/foto/vista-a%C3%A9rea-del-distrito-financiero-de-hong-kong-y-los-centros-de-negocios-en-la-isla-victoria.webp?s=1024x1024&w=is&k=20&c=Dtc6OrUPVw44Zr5uQrRGUDCE_3HZeq82P-x-wG6H2T0=",
-        "desc-img": "ci",
-        "title": "El Sindicato del Fósforo adhiere al paro general convocado por la CGT contra el DNU y la Ley Ómnibus",
-        "body": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores nulla quos, ducimus sapiente sit omnis sed laborum odio",
-        "fecha": "22/04/2023",
-        "url": "https://ospif.ar"
+        "image": "../resc/hero_news/lucia_jara_y_walter_correa.webp",
+        "desc-img": "Lucía Jara y Walter Correa",
+        "title": "Nuestra Sria. Gral. LUCÍA JARA DELGADO se reunió con el ministro WALTER CORREA",
+        "body": "Nuestra Sria. Gral. Lucía Jara Delgado y el Ministro de Trabajo de la Pcia. de Bs. As. Walter Correa",
+        "fecha": "26/03/2024",
+        "url": "#"
     },
     {
-        "image": "https://media.istockphoto.com/id/1660911398/es/foto/vista-a%C3%A9rea-del-distrito-financiero-de-hong-kong-y-los-centros-de-negocios-en-la-isla-victoria.webp?s=1024x1024&w=is&k=20&c=Dtc6OrUPVw44Zr5uQrRGUDCE_3HZeq82P-x-wG6H2T0=",
-        "desc-img": "ci",
-        "title": "Reintegros en consumos de parrilla 'EL PETETE'",
-        "body": "Se le reintegra a Nicolás Ledesma sus consumos en dicha parrilla por un monto de $45.333,25",
-        "fecha": "28/12/2023",
-        "url": "https://ospif.ar"
+        "image": "../resc/hero_news/medife_y_omint.webp",
+        "desc-img": "Beneficios para afiliados",
+        "title": "Más opciones de salud para Afiliados OSPIF y SOEIFEPVA",
+        "body": "A todos nuestros afiliados del Sindicato del Fósforo que tengan OSPIF como su Obra Social, ahora pueden elegir entre las prepagas Omint y Medifé para ampliar su cobertura médica.",
+        "fecha": "20/03/2024",
+        "url": "#"
     },
     {
-        "image": "https://media.istockphoto.com/id/1660911398/es/foto/vista-a%C3%A9rea-del-distrito-financiero-de-hong-kong-y-los-centros-de-negocios-en-la-isla-victoria.webp?s=1024x1024&w=is&k=20&c=Dtc6OrUPVw44Zr5uQrRGUDCE_3HZeq82P-x-wG6H2T0=",
-        "desc-img": "ci",
-        "title": "ANDA BIEN CIONO",
-        "body": "Se le reintegra a Nicolás Ledesma sus consumos en dicha parrilla por un monto de $45.333,25",
-        "fecha": "28/12/2023",
-        "url": "https://ospif.ar"
+        "image": "../resc/hero_news/lucia_jara_y_moyano.webp",
+        "desc-img": "Lucía Jara Delgado y Pablo Moyano",
+        "title": "La conductora del Sindicato, LUCÍA JARA DELGADO, se reunió con PABLO MOYANO",
+        "body": "Coincidieron en la necesidad de trabajar en conjunto para resistir el ajuste del gobierno de MILEI y defender el modelo sindical Argentino que se constituye en el ejemplo a seguir por las principales centrales de nuestro continente",
+        "fecha": "21/02/2024",
+        "url": "#"
     }
 ]
