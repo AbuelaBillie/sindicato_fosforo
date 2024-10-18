@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/*VAR*/
+:root {
+    --black: #333;
+    --white: #fff;
+    --dark-gray: #a8a8a8;
+    --primario: #2cc2e2;
+    --secundario: #dadada;
+    --green: #7fcf9e; 
+    --dark-green: #52b678; 
+    --red: #f36666; 
+    --dark-red: #cc4d4d; 
+}
+/*END VAR*/
+
+/*GENERAL*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-weight: normal;
+    color: var(--black);
+    font-size: 1rem;
+}
+html{
+    background-color:var(--primario)
+}
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+/*FIN GENERAL*/
+
+/*HEADER*/
+header{
+    height: 4rem;
+    background-color: var(--primario);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+header svg{
+    height: 2rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    fill: var(--white);
+}
+header svg:hover{
+    fill: var(--secundario)
+}
+header nav ul{
+    display: flex;
+}
+header nav ul li a{
+    width: 8rem;
+    margin-right: .2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    text-transform: uppercase;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    color: var(--white);
+    font-weight: bold;
+}
+header nav ul li a:hover{
+    background-color: var(--white);
+    color: var(--primario);
+}
+header nav ul li .nav-active{
+    background-color: var(--white);
+    color: var(--black);
+}
+header nav ul li .nav-active:hover{
+    color: var(--black);
+    cursor: initial
+}
+.nav-turnos{
+    background-color: rgb(235, 54, 41);
+}
+.nav-ventas{
+    background-color: rgb(243, 133, 7);
+}
+.nav-caja{
+    background-color: rgb(255, 208, 0);
+}
+.nav-productos{
+    background-color: rgb(116, 216, 112);
+}
+.nav-clientes{
+    background-color: palevioletred;
+}
+/*FIN HEADER*/
+
+/*MAIN*/
+main{
+    background-color: var(--white);
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    border-top-right-radius: 1rem;
+    padding: 2rem;
+    width: fit-content;
+}
+/*END MAIN*/
+
+.oculto{
+    display: none;
+}
