@@ -32,6 +32,7 @@ h2:hover{
     overflow-x: hidden;
     border-radius: .5rem;
     width: fit-content;
+    min-width: 50rem;
 }
 .agenda-turnos .horario-turno{
     display: flex;
@@ -90,3 +91,6 @@ h2:hover{
     margin-left: -1rem;
     visibility: hidden;
 }
+/* .swal2-title{
+    width: 100%;
+} */
