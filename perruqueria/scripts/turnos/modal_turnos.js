@@ -1,4 +1,5 @@
 import turnos_slot from "../../turnos_slot.js"
+import turnos_detalle from "../../turno_detalle.js";
 
 export function modalTurnos(fecha_turno) {
     turnos_slot.forEach(element => {
@@ -12,7 +13,11 @@ export function modalTurnos(fecha_turno) {
                     showCloseButton: true
                 });
             }else{
-                alert("VIENDO DATOS DEL TURNO "+element.id)
+                Swal.fire({
+                    icon: "warning",
+                    html: `${turnos_detalle.id}`,
+                    showCloseButton: true
+                });
             }
         })
     });

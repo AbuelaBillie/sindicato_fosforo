@@ -27,7 +27,7 @@ h2:hover{
 }
 .agenda-turnos{
     margin-top: 2rem;
-    height: 25rem;
+    height: 65vh;
     overflow-y: scroll;
     overflow-x: hidden;
     border-radius: .5rem;
@@ -55,11 +55,11 @@ h2:hover{
 .agenda-turnos .horario-turno .agenda-turno-hora{
    font-weight: bold;
    margin-right: 1rem;
-   width: 2.7rem;
+   width: 3rem;
 }
 .agenda-turnos .horario-turno .agenda-turno-banera{
     margin-right: 1rem;
-    width: 1.2rem;
+    width: 1.5rem;
 }
 .agenda-turnos .horario-turno .agenda-turno-mascota{
     margin-right: 1rem;
@@ -67,7 +67,7 @@ h2:hover{
 }
 .agenda-turnos .horario-turno .agenda-turno-servicio{
     margin-right: 1rem;
-    width: 6rem;
+    width: 7rem;
 }
 .agenda-turnos .horario-turno .agenda-turno-tamano{
     margin-right: 1rem;
@@ -75,11 +75,11 @@ h2:hover{
 }
 .agenda-turnos .horario-turno .agenda-turno-obs-mascota{
     margin-right: 1rem;
-    width: 13rem;
+    width: 20rem;
 }
 .agenda-turnos .horario-turno .agenda-turno-obs-turno{
     margin-right: 1rem;
-    width: 13rem;
+    width: 20rem;
 }
 .agenda-turnos .separador-mediodia{
     background-color: var(--red);

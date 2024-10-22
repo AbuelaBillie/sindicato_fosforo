@@ -9,14 +9,13 @@ export function cambiarAgenda() {
     let btn_calendario = document.getElementById("agenda-turnos-btn-calendario")
     let fecha_agenda = document.getElementById("agenda-turnos-label-fecha")
     let btn_volver = document.getElementById("agenda-turnos-btn-volver")
+    const fechaHoy = formatFecha(new Date());
 
     btn_calendario.addEventListener("click", () => {
         input_calendario.showPicker()
     })
 
     input_calendario.addEventListener("change", () => {
-        const fechaHoy = formatFecha(new Date());
-  
         if (fechaHoy != input_calendario.value) {
             fecha_agenda.innerText= fecha_a_texto(input_calendario.value)
             btn_volver.classList.remove("oculto")
@@ -32,8 +31,12 @@ export function cambiarAgenda() {
 
     btn_volver.addEventListener("click", ()=>{
         fecha_agenda.innerText= "HOY"
-        btn_volver.classList.add("oculto")            
+        btn_volver.classList.add("oculto")
+        input_calendario.value = fechaHoy
+        console.log(input_calendario.value);
+                    
         renderAgenda(turnos2110_db)
+        modalTurnos(fecha_a_texto(input_calendario.value))
     })
 
     

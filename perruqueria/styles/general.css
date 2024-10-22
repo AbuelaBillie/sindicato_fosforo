@@ -22,7 +22,7 @@
     font-family: "Roboto", sans-serif;
     font-weight: normal;
     color: var(--black);
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 html{
     background-color:var(--primario)
@@ -43,6 +43,7 @@ header{
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+    padding-left: 2.5rem;
 }
 header svg{
     height: 2rem;
@@ -102,11 +103,10 @@ header nav ul li .nav-active:hover{
 /*MAIN*/
 main{
     background-color: var(--white);
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
-    border-top-right-radius: 1rem;
+    border-radius: 1rem;
     padding: 2rem;
     width: fit-content;
+    margin-left: 1rem;
 }
 /*END MAIN*/
 

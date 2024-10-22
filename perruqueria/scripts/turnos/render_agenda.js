@@ -1,6 +1,9 @@
 import turnos_slot from "../../turnos_slot.js"
-export function renderAgenda(turnos_dia) {
+
+export function renderAgenda(fecha) {
     limpiarAgenda()
+    let turnos_dia = fecha //PEDIR TURNOS DEL DIA A LA API CON EL PARAMETRO fecha
+    
     turnos_dia.forEach((element) => {
         let id_turno = element.hora_turno + element.spot
         let contenedor_turno = document.getElementById(id_turno)
