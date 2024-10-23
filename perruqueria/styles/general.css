@@ -3,9 +3,11 @@
 /*VAR*/
 :root {
     --black: #333;
+    --light-black: #585858;
     --white: #fff;
     --dark-gray: #a8a8a8;
     --primario: #2cc2e2;
+    --dark-primario: #0c7b94;
     --secundario: #dadada;
     --green: #7fcf9e; 
     --dark-green: #52b678; 
@@ -33,6 +35,13 @@ ul {
 
 a {
     text-decoration: none;
+}
+.row{
+    display: flex;
+}
+.column{
+    display: flex;
+    flex-direction: column;
 }
 /*FIN GENERAL*/
 

@@ -94,3 +94,76 @@ h2:hover{
 /* .swal2-title{
     width: 100%;
 } */
+
+/*MODAL TURNO ASIGNADO*/
+.modal-turno-asignado{
+    padding: 3rem;
+    text-align: left;
+}
+.modal-turno-asignado h2{
+    margin-bottom: 1rem;
+    font-weight: bold;
+    cursor: default;
+}
+.modal-turno-asignado h2:hover{
+    color: var(--red);
+}
+.modal-turno-asignado h3, .modal-turno-asignado h3 span{
+    font-size: 1rem;
+    font-weight: bold;
+}
+.modal-turno-asignado h4, .modal-turno-asignado h4 span{
+    font-size: .9rem;
+    text-transform: uppercase;
+}
+.modal-turno-asignado section{
+   margin-top: 2rem; 
+}
+.modal-turno-asignado section h3{
+    color: var(--light-black);
+    margin-bottom: .5rem;
+}
+.modal-turno-asignado section svg{
+    height: 1rem;
+    margin-left: .5rem;
+    fill: var(--secundario);
+}
+.modal-turno-asignado section svg:hover{
+    cursor: pointer;
+    fill: var(--light-black);
+}
+.modal-turno-asignado section label{
+    margin-bottom: .2rem;
+    font-size: 1rem;
+    color: var(--dark-gray);
+}
+.modal-turno-asignado section input, .modal-turno-asignado section textarea{
+    padding: .3rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+.modal-turno-asignado section textarea{
+    resize: none;
+}
+.modal-turno-asignado section .botonera button{
+    margin-top: 1rem;
+    padding: .7rem;
+    border-radius: .5rem;
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+}
+.modal-turno-asignado section .botonera .reprogramar{
+    background-color: var(--primario);
+}
+.modal-turno-asignado section .botonera .reprogramar:hover{
+    background-color: var(--dark-primario);
+}
+.modal-turno-asignado section .botonera .anular{
+    background-color: var(--red);
+
+}
+.modal-turno-asignado section .botonera .anular:hover{
+    background-color: var(--dark-red);
+}
+/*END MODAL TURNO ASIGNADO*/

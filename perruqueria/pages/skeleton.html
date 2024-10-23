@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/general.css">
+    <link rel="stylesheet" href="../styles/turnos.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="../scripts/turnos.js"></script>
+    <title>Turnos Perruquería</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a class="nav-turnos nav-active" href="">Turnos</a>
+                </li>
+                <li>
+                    <a class="nav-ventas" href="">Ventas</a>
+                </li>
+                <li>
+                    <a class="nav-caja" href="">Caja</a>
+                </li>
+                <li>
+                    <a class="nav-productos" href="">Productos</a>
+                </li>
+                <li>
+                    <a class="nav-clientes" href="">Clientes</a>
+                </li>
+            </ul>
+        </nav>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <title>Cerrar sesión</title>
+            <path
+                d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z" />
+        </svg>
+    </header>
+    <main>
+        <div class="agenda-turnos-fecha">
+            <h1 id="agenda-turnos-label-fecha">HOY</h1>
+            <svg id="agenda-turnos-btn-calendario" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <title>Ver más fechas</title>
+                <path
+                    d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 40L64 64C28.7 64 0 92.7 0 128l0 16 0 48L0 448c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-256 0-48 0-16c0-35.3-28.7-64-64-64l-40 0 0-40c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 40L152 64l0-40zM48 192l352 0 0 256c0 8.8-7.2 16-16 16L64 464c-8.8 0-16-7.2-16-16l0-256z" />
+            </svg>
+            <input type="date" id="agenda-turnos-input-calendario">
+        </div>
+        <h2 class="oculto" id="agenda-turnos-btn-volver">Volver al día de hoy</h2>
+        <div class="agenda-turnos">
+            <div class="horario-turno turno-disponible" id="10B1" title="RESERVAR">
+                <p class="agenda-turno-hora">10:00</p>
+                <p class="agenda-turno-banera">B1</p>
+                <p class="agenda-turno-mascota">...</p>
+            </div>
+            <div class="horario-turno turno-disponible" id="10B2" title="RESERVAR">
+                <p class="agenda-turno-hora">10:00</p>
+                <p class="agenda-turno-banera">B2</p>
+                <p class="agenda-turno-mascota">...</p>
+            </div>
+            <div class="horario-turno turno-disponible" id="11B1" title="RESERVAR">
+                <p class="agenda-turno-hora">11:00</p>
+                <p class="agenda-turno-banera">B1</p>
+                <p class="agenda-turno-mascota">...</p>
+            </div>
+            <div class="horario-turno turno-disponible" id="11B2" title="RESERVAR">
+                <p class="agenda-turno-hora">11:00</p>
+                <p class="agenda-turno-banera">B2</p>
+                <p class="agenda-turno-mascota">...</p>
+            </div>
+            <div class="horario-turno turno-disponible" id="12B1" title="RESERVAR">
+                <p class="agenda-turno-hora">12:00</p>
+                <p class="agenda-turno-banera">B1</p>
+                <p class="agenda-turno-mascota">...</p>
+            </div>
+            <div class="horario-turno turno-disponible" id="12B2" title="RESERVAR">
+                <p class="agenda-turno-hora">12:00</p>
+                <p class="agenda-turno-banera">B2</p>
+                <p class="agenda-turno-mascota">...</p>
+            </div>
+            <div class="separador-mediodia"></div>
+            <div class="horario-turno turno-disponible" id="13B1" title="RESERVAR">
+                <p class="agenda-turno-hora">13:00</p>
+                <p class="agenda-turno-banera">B1</p>
+                <p class="agenda-turno-mascota">...</p>
+            </div>
+            <div class="horario-turno turno-disponible" id="13B2" title="RESERVAR">
+                <p class="agenda-turno-hora">13:00</p>
+                <p class="agenda-turno-banera">B2</p>
+                <p class="agenda-turno-mascota">...</p>
+            </div>
+            <div class="horario-turno turno-disponible" id="14B1" title="RESERVAR">
+                <p class="agenda-turno-hora">14:00</p>
+                <p class="agenda-turno-banera">B1</p>
+                <p class="agenda-turno-mascota">...</p>
+            </div>
+            <div class="horario-turno turno-disponible" id="14B2" title="RESERVAR">
+                <p class="agenda-turno-hora">14:00</p>
+                <p class="agenda-turno-banera">B2</p>
+                <p class="agenda-turno-mascota">...</p>
+            </div>
+            <div class="horario-turno turno-disponible" id="15B1" title="RESERVAR">
+                <p class="agenda-turno-hora">15:00</p>
+                <p class="agenda-turno-banera">B1</p>
+                <p class="agenda-turno-mascota">...</p>
+            </div>
+            <div class="horario-turno turno-disponible" id="15B2" title="RESERVAR">
+                <p class="agenda-turno-hora">15:00</p>
+                <p class="agenda-turno-banera">B2</p>
+                <p class="agenda-turno-mascota">...</p>
+            </div>
+            <div class="horario-turno turno-disponible" id="16B1" title="RESERVAR">
+                <p class="agenda-turno-hora">16:00</p>
+                <p class="agenda-turno-banera">B1</p>
+                <p class="agenda-turno-mascota">...</p>
+            </div>
+            <div class="horario-turno turno-disponible" id="16B2" title="RESERVAR">
+                <p class="agenda-turno-hora">16:00</p>
+                <p class="agenda-turno-banera">B2</p>
+                <p class="agenda-turno-mascota">...</p>
+            </div>
+            <div class="horario-turno turno-disponible" id="17B1" title="RESERVAR">
+                <p class="agenda-turno-hora">17:00</p>
+                <p class="agenda-turno-banera">B1</p>
+                <p class="agenda-turno-mascota">...</p>
+            </div>
+            <div class="horario-turno turno-disponible" id="17B2" title="RESERVAR">
+                <p class="agenda-turno-hora">17:00</p>
+                <p class="agenda-turno-banera">B2</p>
+                <p class="agenda-turno-mascota">...</p>
+            </div>
+            <div class="horario-turno turno-disponible" id="18B1" title="RESERVAR">
+                <p class="agenda-turno-hora">18:00</p>
+                <p class="agenda-turno-banera">B1</p>
+                <p class="agenda-turno-mascota">...</p>
+            </div>
+            <div class="horario-turno turno-disponible" id="18B2" title="RESERVAR">
+                <p class="agenda-turno-hora">18:00</p>
+                <p class="agenda-turno-banera">B2</p>
+                <p class="agenda-turno-mascota">...</p>
+            </div>
+            <div class="horario-turno turno-disponible" id="19B1" title="RESERVAR">
+                <p class="agenda-turno-hora">19:00</p>
+                <p class="agenda-turno-banera">B1</p>
+                <p class="agenda-turno-mascota">...</p>
+            </div>
+            <div class="horario-turno turno-disponible" id="19B2" title="RESERVAR">
+                <p class="agenda-turno-hora">19:00</p>
+                <p class="agenda-turno-banera">B2</p>
+                <p class="agenda-turno-mascota">...</p>
+            </div>
+            <div class="horario-turno turno-disponible" id="20B1" title="RESERVAR">
+                <p class="agenda-turno-hora">20:00</p>
+                <p class="agenda-turno-banera">B1</p>
+                <p class="agenda-turno-mascota">...</p>
+            </div>
+            <div class="horario-turno turno-disponible" id="20B2" title="RESERVAR">
+                <p class="agenda-turno-hora">20:00</p>
+                <p class="agenda-turno-banera">B2</p>
+                <p class="agenda-turno-mascota">...</p>
+            </div>
+        </div>
+        <div class="modal-turno-asignado">
+            <h2>TURNO RESERVADO</h2>
+            <h3>MIERCOLES 23 de OCTUBRE de 2024 - <span>11:00HS</span></h3>
+            <h4>BAÑO Y CORTE - <span>PEQUEÑO</span> - <span>B1</span></h4>
+            <section>
+                <div class="row">
+                    <h3>MASCOTA</h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z"/></svg>
+                </div>
+                <div class="column">
+                    <label for="">Nombre</label>
+                    <input type="text" value="Dinamita" disabled>
+                </div>
+                <div class="column">
+                    <label for="">Tamaño</label>
+                    <input type="text" value="Pequeño" disabled>
+                </div>
+                <div class="column">
+                    <label for="">Observaciones</label>
+                    <textarea name="" id="" disabled>Alérgico al champú tradicional. Usa ByFleas</textarea>
+                </div>
+            </section>
+            <section>
+                <div class="row">
+                    <h3>TUTOR</h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z"/></svg>
+                </div>
+                <div class="column">
+                    <label for="">Nombre</label>
+                    <input type="text" value="Dinamita" disabled>
+                </div>
+                <div class="column">
+                    <label for="">Teléfono</label>
+                    <input type="tel" value="117396483" disabled>
+                </div>
+                <div class="column">
+                    <label for="">Teléfono Alternativo</label>
+                    <input type="tel" value="1128588361" disabled>
+                </div>
+                <div class="column">
+                    <label for="">Email</label>
+                    <input type="email" value="ncguede@gmail.com" disabled>
+                </div>
+            </section>
+            <section>
+                <div class="row">
+                    <h3>DETALLE</h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z"/></svg>
+                </div>
+                <div class="column">
+                    <label for="">Servicio</label>
+                    <input type="text" value="Baño y corte" disabled>
+                </div>
+                <div class="column">
+                    <label for="">Fecha turno</label>
+                    <input type="date" value="2024-10-23" disabled>
+                </div>
+                <div class="column">
+                    <label for="">Hora turno</label>
+                    <input type="time" value="11:00" disabled>
+                </div>
+                <div class="column">
+                    <label for="">Recepción reserva</label>
+                    <input type="text" value="Ulises Guede" disabled>
+                </div>
+                <div class="column">
+                    <label for="">Carga en sistema</label>
+                    <input type="date" value="2024-10-15" disabled>
+                </div>
+                <div class="column">
+                    <label for="">Observaciones</label>
+                    <textarea name="" id="" disabled>Retira Julia Goldfish</textarea>
+                </div>
+                <div class="column botonera">
+                    <button type="button" class="reprogramar">Reprogramar</button>
+                    <button type="button" class="anular">Anular</button>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer></footer>
+</body>
+
+</html>
