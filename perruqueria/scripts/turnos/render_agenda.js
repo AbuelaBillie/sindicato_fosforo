@@ -13,7 +13,7 @@ export function renderAgenda(fecha) {
         let item =
             `
                 <p class="agenda-turno-hora">${element.hora_turno}:00</p>
-                <p class="agenda-turno-banera">${element.spot}</p>
+                <p class="agenda-turno-spot">${element.spot}</p>
                 <p class="agenda-turno-mascota">${element.mascota.nombre}</p>
                 <p class="agenda-turno-servicio">${element.servicio.nombre}</p>
                 <p class="agenda-turno-tamano">${element.mascota.tamaño}</p>
@@ -31,7 +31,7 @@ function limpiarAgenda() {
         contenedor_turno.title = "RESERVAR"
         contenedor_turno.innerHTML = `
                 <p class="agenda-turno-hora">${element.hora}:00</p>
-                <p class="agenda-turno-banera">${element.spot}</p>
+                <p class="agenda-turno-spot">${element.spot}</p>
                 <p class="agenda-turno-mascota">...</p>`
     });
 }

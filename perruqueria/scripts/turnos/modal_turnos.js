@@ -6,20 +6,21 @@ export function modalTurnos(fecha_turno) {
     turnos_slot.forEach(element => {
         let contenedor_turno = document.getElementById(element.id)
         let horario_turno = contenedor_turno.id.toString().slice(0, 2)
-        contenedor_turno.addEventListener("click", ()=>{
+        let spot_turno = contenedor_turno.id.toString().slice(2, 4)
+        contenedor_turno.addEventListener("click", () => {
             if (contenedor_turno.classList.contains("turno-disponible")) {
                 Swal.fire({
                     icon: "warning",
-                    text: `¿Reservar ${fecha_turno} a las ${horario_turno}:00HS?`,
+                    text: `¿Reservar ${fecha_a_texto(fecha_turno)} a las ${horario_turno}:00HS?`,
                     showCloseButton: true
                 })
-                .then(response => {
-                    if (response.isConfirmed) {
-                        Swal.fire({
-                            html: 
-                            `<div class="modal-turno-asignado">
+                    .then(response => {
+                        if (response.isConfirmed) {
+                            Swal.fire({
+                                html:
+                                    `<div class="modal-turno-asignado">
                     <h2>RESERVAR TURNO</h2>
-                    <h3>${fecha_a_texto(turnos_detalle.fecha_turno)} - ${turnos_detalle.hora_turno}:00HS</h3>
+                    <h3>${fecha_a_texto(fecha_turno)} - ${horario_turno}:00HS - ${spot_turno}</h3>
                     <section>
                         <div class="row">
                             <h3>MASCOTA</h3>
@@ -30,7 +31,12 @@ export function modalTurnos(fecha_turno) {
                         </div>
                         <div class="column">
                             <label for="">Tamaño</label>
-                            <input type="text" value="">
+                            <select>
+                                <option value="0">Sin seleccionar</option>
+                                <option value="1">Grande</option>
+                                <option value="2">Mediano</option>
+                                <option value="3">Pequeño</option>
+                            </select>
                         </div>
                         <div class="column">
                             <label for="">Observaciones</label>
@@ -64,41 +70,59 @@ export function modalTurnos(fecha_turno) {
                         </div>
                         <div class="column">
                             <label for="">Servicio</label>
-                            <input type="text" value="" >
+                            <select>
+                                <option value="0">Sin seleccionar</option>
+                                <option value="1">Baño</option>
+                                <option value="2">Baño y corte</option>
+                            </select>
+                        </div>
+                        <div class="column">
+                            <label for="">Spot</label>
+                            <input type="text" value="${spot_turno}" disabled>
                         </div>
                         <div class="column">
                             <label for="">Fecha turno</label>
-                            <input type="date" value="">
+                            <input type="date" value="${fecha_turno}" disabled>
                         </div>
                         <div class="column">
                             <label for="">Hora turno</label>
-                            <input type="time" value="" >
+                            <input type="time" value="${horario_turno}:00" disabled>
                         </div>
                         <div class="column">
                             <label for="">Observaciones</label>
-                            <textarea name="" id="" disabled>Retira Julia Goldfish</textarea>
+                            <textarea name="" id=""></textarea>
                         </div>
                         <div class="column botonera">
-                            <button type="button" class="reservar">Reservar</button>
+                            <button type="button" class="reservar" id="btn-reservar">Reservar</button>
                         </div>
                     </section>
                             </div>`,
-                            showCloseButton: true,
-                            showConfirmButton: false
-                        });
-                    }
-                })
-            }else{
+                                showCloseButton: true,
+                                showConfirmButton: false,
+                                allowOutsideClick: false
+                            })
+                            let btn_reservar = document.getElementById("btn-reservar")
+                            btn_reservar.addEventListener("click", ()=>{
+                                Swal.fire({
+                                    icon: "success",
+                                    text: "Turno reservado con éxito"
+                                });
+                            })      
+                        }
+                    })
+            } else {
                 Swal.fire({
-                    html: 
-                    `<div class="modal-turno-asignado">
+                    html:
+                        `<div class="modal-turno-asignado">
             <h2>TURNO RESERVADO</h2>
             <h3>${fecha_a_texto(turnos_detalle.fecha_turno)} - ${turnos_detalle.hora_turno}:00HS</h3>
             <h4>${turnos_detalle.servicio.nombre} - <span>${turnos_detalle.mascota.tamaño}</span> - <span>${turnos_detalle.spot}</span></h4>
             <section>
                 <div class="row">
                     <h3>MASCOTA</h3>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="btn-edit-mascota"><title>Editar</title><path d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="btn-guardar-edit oculto" id="btn-guardar-edit-mascota"><title>Guardar</title><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="btn-cancelar-edit oculto" id="btn-cancelar-edit-mascota"><title>Cancelar</title><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
                 </div>
                 <div class="column">
                     <label for="">Nombre</label>
@@ -116,7 +140,9 @@ export function modalTurnos(fecha_turno) {
             <section>
                 <div class="row">
                     <h3>TUTOR</h3>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="btn-edit-tutor"><path d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="btn-guardar-edit oculto" id="btn-guardar-edit-tutor"><title>Guardar</title><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="btn-cancelar-edit oculto" id="btn-cancelar-edit-tutor"><title>Cancelar</title><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
                 </div>
                 <div class="column">
                     <label for="">Nombre</label>
@@ -138,11 +164,17 @@ export function modalTurnos(fecha_turno) {
             <section>
                 <div class="row">
                     <h3>DETALLE</h3>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="btn-edit-detalle"><path d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="btn-guardar-edit oculto" id="btn-guardar-edit-detalle"><title>Guardar</title><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="btn-cancelar-edit oculto" id="btn-cancelar-edit-delatte"><title>Cancelar</title><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
                 </div>
                 <div class="column">
                     <label for="">Servicio</label>
                     <input type="text" value="${turnos_detalle.servicio.nombre}" disabled>
+                </div>
+                <div class="column">
+                    <label for="">Spot</label>
+                    <input type="text" value="${turnos_detalle.spot}" disabled>
                 </div>
                 <div class="column">
                     <label for="">Fecha turno</label>
@@ -154,15 +186,15 @@ export function modalTurnos(fecha_turno) {
                 </div>
                 <div class="column">
                     <label for="">Recepción reserva</label>
-                    <input type="text" value="${turnos_detalle.servicio.nombre}" disabled>
+                    <input type="text" value="${turnos_detalle.operador}" disabled>
                 </div>
                 <div class="column">
                     <label for="">Carga en sistema</label>
-                    <input type="date" value="2024-10-15" disabled>
+                    <input type="date" value="${turnos_detalle.fecha_carga}" disabled>
                 </div>
                 <div class="column">
                     <label for="">Observaciones</label>
-                    <textarea name="" id="" disabled>Retira Julia Goldfish</textarea>
+                    <textarea name="" id="" disabled>${turnos_detalle.obs_turno}</textarea>
                 </div>
                 <div class="column botonera">
                     <button type="button" class="reprogramar">Reprogramar</button>
@@ -173,6 +205,28 @@ export function modalTurnos(fecha_turno) {
                     showCloseButton: true,
                     showConfirmButton: false
                 });
+
+                let btn_edit_mascota = document.getElementById("btn-edit-mascota")
+                let btn_guardar_edit_mascota = document.getElementById("btn-guardar-edit-mascota")
+                let btn_cancelar_edit_mascota = document.getElementById("btn-cancelar-edit-mascota")
+
+                btn_edit_mascota.addEventListener("click",()=>{
+                    btn_edit_mascota.classList.add("oculto")
+                    btn_guardar_edit_mascota.classList.remove("oculto")
+                    btn_cancelar_edit_mascota.classList.remove("oculto")
+                })
+
+                btn_guardar_edit_mascota.addEventListener("click",()=>{
+                    btn_edit_mascota.classList.remove("oculto")
+                    btn_guardar_edit_mascota.classList.add("oculto")
+                    btn_cancelar_edit_mascota.classList.add("oculto")
+                })
+
+                btn_cancelar_edit_mascota.addEventListener("click",()=>{
+                    btn_edit_mascota.classList.remove("oculto")
+                    btn_guardar_edit_mascota.classList.add("oculto")
+                    btn_cancelar_edit_mascota.classList.add("oculto")
+                })
             }
         })
     });

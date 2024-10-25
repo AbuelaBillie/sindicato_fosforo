@@ -1,31 +1,37 @@
-h1{
+h1 {
     font-size: 1.5rem;
 }
-h2{
+
+h2 {
     margin-top: .3rem;
     cursor: pointer;
     color: var(--red);
     width: fit-content;
 }
-h2:hover{
+
+h2:hover {
     margin-top: .3rem;
     cursor: pointer;
     color: var(--dark-red)
 }
-.agenda-turnos-fecha{
+
+.agenda-turnos-fecha {
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
-.agenda-turnos-fecha svg{
+
+.agenda-turnos-fecha svg {
     height: 1.3rem;
     margin-left: .7rem;
     cursor: pointer;
 }
-.agenda-turnos-fecha svg:hover{
+
+.agenda-turnos-fecha svg:hover {
     fill: var(--primario);
 }
-.agenda-turnos{
+
+.agenda-turnos {
     margin-top: 2rem;
     height: 65vh;
     overflow-y: scroll;
@@ -34,118 +40,158 @@ h2:hover{
     width: fit-content;
     min-width: 50rem;
 }
-.agenda-turnos .horario-turno{
+
+.agenda-turnos .horario-turno {
     display: flex;
     background-color: var(--secundario);
     padding: 1rem;
     border-bottom: solid;
     border-width: 2px;
-    border-color:  var(--white);
+    border-color: var(--white);
     cursor: pointer;
 }
-.agenda-turnos .horario-turno:hover{
+
+.agenda-turnos .horario-turno:hover {
     background-color: var(--dark-gray);
 }
-.agenda-turnos .turno-disponible{
+
+.agenda-turnos .turno-disponible {
     background-color: var(--green);
 }
-.agenda-turnos .turno-disponible:hover{
+
+.agenda-turnos .turno-disponible:hover {
     background-color: var(--dark-green);
 }
-.agenda-turnos .horario-turno .agenda-turno-hora{
-   font-weight: bold;
-   margin-right: 1rem;
-   width: 3rem;
+
+.agenda-turnos .horario-turno .agenda-turno-hora {
+    font-weight: bold;
+    margin-right: 1rem;
+    width: 3rem;
 }
-.agenda-turnos .horario-turno .agenda-turno-banera{
+
+.agenda-turnos .horario-turno .agenda-turno-spot {
     margin-right: 1rem;
     width: 1.5rem;
 }
-.agenda-turnos .horario-turno .agenda-turno-mascota{
+
+.agenda-turnos .horario-turno .agenda-turno-mascota {
     margin-right: 1rem;
     width: 8rem;
 }
-.agenda-turnos .horario-turno .agenda-turno-servicio{
+
+.agenda-turnos .horario-turno .agenda-turno-servicio {
     margin-right: 1rem;
     width: 7rem;
 }
-.agenda-turnos .horario-turno .agenda-turno-tamano{
+
+.agenda-turnos .horario-turno .agenda-turno-tamano {
     margin-right: 1rem;
     width: 4.5rem;
 }
-.agenda-turnos .horario-turno .agenda-turno-obs-mascota{
+
+.agenda-turnos .horario-turno .agenda-turno-obs-mascota {
     margin-right: 1rem;
     width: 20rem;
 }
-.agenda-turnos .horario-turno .agenda-turno-obs-turno{
+
+.agenda-turnos .horario-turno .agenda-turno-obs-turno {
     margin-right: 1rem;
     width: 20rem;
 }
-.agenda-turnos .separador-mediodia{
+
+.agenda-turnos .separador-mediodia {
     background-color: var(--red);
     height: 2px;
     width: 100%;
 }
-#agenda-turnos-input-calendario{
+
+#agenda-turnos-input-calendario {
     width: 1rem;
     margin-left: -1rem;
     visibility: hidden;
 }
-/* .swal2-title{
-    width: 100%;
-} */
 
 /*MODAL TURNO ASIGNADO*/
-.modal-turno-asignado{
+.modal-turno-asignado {
     padding: 3rem;
     text-align: left;
 }
-.modal-turno-asignado h2{
+
+.modal-turno-asignado h2 {
     margin-bottom: 1rem;
     font-weight: bold;
     cursor: default;
 }
-.modal-turno-asignado h2:hover{
+
+.modal-turno-asignado h2:hover {
     color: var(--red);
 }
-.modal-turno-asignado h3, .modal-turno-asignado h3 span{
+
+.modal-turno-asignado h3,
+.modal-turno-asignado h3 span {
     font-size: 1rem;
     font-weight: bold;
 }
-.modal-turno-asignado h4, .modal-turno-asignado h4 span{
+
+.modal-turno-asignado h4,
+.modal-turno-asignado h4 span {
     font-size: .9rem;
     text-transform: uppercase;
 }
-.modal-turno-asignado section{
-   margin-top: 2rem; 
+
+.modal-turno-asignado section {
+    margin-top: 2rem;
 }
-.modal-turno-asignado section h3{
+
+.modal-turno-asignado section h3 {
     color: var(--light-black);
     margin-bottom: .5rem;
 }
-.modal-turno-asignado section svg{
+
+.modal-turno-asignado section svg {
     height: 1rem;
     margin-left: .5rem;
     fill: var(--secundario);
 }
-.modal-turno-asignado section svg:hover{
+
+.modal-turno-asignado section svg:hover {
     cursor: pointer;
     fill: var(--light-black);
 }
-.modal-turno-asignado section label{
+
+.modal-turno-asignado section .btn-guardar-edit {
+    fill: var(--green);
+}
+
+.modal-turno-asignado section .btn-cancelar-edit {
+    fill: var(--red);
+}
+.modal-turno-asignado section .btn-guardar-edit:hover {
+    fill: var(--dark-green);
+}
+
+.modal-turno-asignado section .btn-cancelar-edit:hover {
+    fill: var(--dark-red);
+}
+.modal-turno-asignado section label {
     margin-bottom: .2rem;
     font-size: 1rem;
     color: var(--dark-gray);
 }
-.modal-turno-asignado section input, .modal-turno-asignado section textarea{
+
+.modal-turno-asignado section input,
+.modal-turno-asignado section textarea {
     padding: .3rem;
     margin-bottom: 1rem;
     font-size: 1rem;
 }
-.modal-turno-asignado section textarea{
+
+.modal-turno-asignado section textarea {
     resize: none;
+    height: 5rem;
 }
-.modal-turno-asignado section .botonera button{
+
+.modal-turno-asignado section .botonera button {
     margin-top: 1rem;
     padding: .7rem;
     border-radius: .5rem;
@@ -153,17 +199,39 @@ h2:hover{
     color: var(--white);
     cursor: pointer;
 }
-.modal-turno-asignado section .botonera .reprogramar{
+
+.modal-turno-asignado section .botonera .reprogramar {
     background-color: var(--primario);
 }
-.modal-turno-asignado section .botonera .reprogramar:hover{
+
+.modal-turno-asignado section .botonera .reprogramar:hover {
     background-color: var(--dark-primario);
 }
-.modal-turno-asignado section .botonera .anular{
+
+.modal-turno-asignado section .botonera .anular {
     background-color: var(--red);
 
 }
-.modal-turno-asignado section .botonera .anular:hover{
+
+.modal-turno-asignado section .botonera .anular:hover {
     background-color: var(--dark-red);
 }
+
 /*END MODAL TURNO ASIGNADO*/
+
+/*MODAL RESERVAR TURNO*/
+.modal-turno-asignado section select {
+    padding: .3rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.modal-turno-asignado section .botonera .reservar {
+    background-color: var(--green);
+}
+
+.modal-turno-asignado section .botonera .reservar:hover {
+    background-color: var(--dark-green);
+}
+
+/*END MODAL RESERVAR TURNO*/

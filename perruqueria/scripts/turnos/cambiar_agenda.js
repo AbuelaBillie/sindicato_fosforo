@@ -26,7 +26,7 @@ export function cambiarAgenda() {
             renderAgenda(turnos2110_db)
         }
 
-        modalTurnos(fecha_a_texto(input_calendario.value))
+        modalTurnos(input_calendario.value)
     })
 
     btn_volver.addEventListener("click", ()=>{
@@ -36,7 +36,7 @@ export function cambiarAgenda() {
         console.log(input_calendario.value);
                     
         renderAgenda(turnos2110_db)
-        modalTurnos(fecha_a_texto(input_calendario.value))
+        modalTurnos(input_calendario.value)
     })
 
     
